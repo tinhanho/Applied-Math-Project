@@ -7,8 +7,6 @@ def main():
         Linear_Way() # AKA Bilinear filtering
     elif input_str == '2':
         Cubic_Spline_Way() # TODO: Use bicubic interpolation over 4x4 pixel neighborhood
-    elif input_str == '3':
-        Mixed_Way() # TODO: Use 4x4 as well
 
 if __name__ == '__main__':
     main()
