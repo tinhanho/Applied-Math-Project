@@ -38,7 +38,7 @@ def BiCubic_interpolation(img, dstH, dstW):
     return retimg
 
 # The rest of your code
-im_path = r"C:\Users\luowe\Downloads\Applied-Math-Project-main\\2.jpg"
+im_path = "2.jpg"
 image = np.array(Image.open(im_path))
 image2 = BiCubic_interpolation(image, image.shape[0] * 2, image.shape[1] * 2)
 image2 = Image.fromarray(image2, 'RGB')
