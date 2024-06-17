@@ -4,7 +4,7 @@ import numpy as np
 from PIL import Image
 
 def Linear_Way():
-    img = plt.imread("2.jpg")
+    img = plt.imread("PIL.jpg")
     img = img.copy()
     img = img.tolist()
     height = len(img)
@@ -20,7 +20,7 @@ def Linear_Way():
         for k in range(width):
             img[j].append(width_append[0])
 
-    img_org = plt.imread("2.jpg")
+    img_org = plt.imread("PIL.jpg")
     img_org = img_org.copy().tolist()
     img = np.array(img)
 
@@ -93,10 +93,10 @@ def Linear_Way():
                 img[i*2+1][j*2+1][2] = (img[i*2+1][j*2][2] + img[i*2+1][j*2+2][2])/2
             else:
                 img[i*2+1][j * 2 + 1][2] = img[i*2+1][j*2][2]
-    # f, axs = plt.subplots(1, 2, figsize=(10, 8), width_ratios=[1, 2])
-    # img_org = np.array(img_org)
-    # axs[0].imshow(img_org)
-    # axs[1].imshow(img)
-    # plt.show()
+    f, axs = plt.subplots(1, 2, figsize=(10, 8), width_ratios=[1, 2])
+    img_org = np.array(img_org)
+    axs[0].imshow(img_org)
+    axs[1].imshow(img)
+    plt.show()
     im = Image.fromarray(img.astype(np.uint8))
     im.save("out2_Linear.jpg")

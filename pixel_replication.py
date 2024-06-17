@@ -1,6 +1,6 @@
 import cv2
 import numpy as np
-
+from matplotlib import pyplot as plt
 def pixel_replication_zoom(image):
     height, width, channels = image.shape
     new_width = width * 2
@@ -26,9 +26,17 @@ def pixel_replication_zoom(image):
     
     # 保存放大後的圖片
     cv2.imwrite('pixel_replication.jpg', new_image)
+    image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+    new_image = cv2.cvtColor(new_image, cv2.COLOR_BGR2RGB)
+    f, axs = plt.subplots(1, 2, figsize=(10, 8), width_ratios=[1, 2])
+    axs[0].imshow(image)
+    axs[1].imshow(new_image)
+    plt.show()
+
+def pixel():
+    image_path = 'PIL.jpg'
+    image = cv2.imread(image_path)
+    pixel_replication_zoom(image)
 
 
-image_path = 'Applied-Math-Project-main\PIL.jpg'
-image = cv2.imread(image_path)
-pixel_replication_zoom(image)
 

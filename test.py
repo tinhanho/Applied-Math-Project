@@ -1,6 +1,7 @@
 import numpy as np
 import math
 from PIL import Image
+from matplotlib import pyplot as plt
 
 def BiCubic(x):
     a = -0.5
@@ -38,8 +39,14 @@ def BiCubic_interpolation(img, dstH, dstW):
     return retimg
 
 # The rest of your code
-im_path = "2.jpg"
-image = np.array(Image.open(im_path))
-image2 = BiCubic_interpolation(image, image.shape[0] * 2, image.shape[1] * 2)
-image2 = Image.fromarray(image2, 'RGB')
-image2.save('BiCubic_interpolation.jpg')
+def bicubic():
+    im_path = "PIL.jpg"
+    image = np.array(Image.open(im_path))
+    image2 = BiCubic_interpolation(image, image.shape[0] * 2, image.shape[1] * 2)
+    image2 = Image.fromarray(image2, 'RGB')
+    image2.save('BiCubic_interpolation.jpg')
+    f, axs = plt.subplots(1, 2, figsize=(10, 8), width_ratios=[1, 2])
+    image = np.array(image)
+    axs[0].imshow(image)
+    axs[1].imshow(image2)
+    plt.show()
