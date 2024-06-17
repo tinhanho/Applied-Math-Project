@@ -33,8 +33,7 @@ def pixel_replication_zoom(image):
     axs[1].imshow(new_image)
     plt.show()
 
-def pixel():
-    image_path = 'PIL.jpg'
+def pixel(image_path):
     image = cv2.imread(image_path)
     pixel_replication_zoom(image)
 

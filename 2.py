@@ -1,6 +1,6 @@
 from PIL import Image
 
-img = Image.open("1.jpg")
-img = img.resize((33, 60))
+img = Image.open("david.jpg")
+img = img.resize((144, 96))
 
-img.save('PIL.jpg')
+img.save('david144.jpg')

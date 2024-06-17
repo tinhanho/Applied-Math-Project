@@ -3,8 +3,8 @@ from scipy.interpolate import CubicSpline
 import numpy as np
 from PIL import Image
 
-def Linear_Way():
-    img = plt.imread("PIL.jpg")
+def Linear_Way(image_path):
+    img = plt.imread(image_path)
     img = img.copy()
     img = img.tolist()
     height = len(img)
@@ -20,7 +20,7 @@ def Linear_Way():
         for k in range(width):
             img[j].append(width_append[0])
 
-    img_org = plt.imread("PIL.jpg")
+    img_org = plt.imread(image_path)
     img_org = img_org.copy().tolist()
     img = np.array(img)
 
